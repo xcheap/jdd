@@ -1,32 +1,39 @@
 # 说明
- * 个人研究学习自用
- * 合集加的最后结尾大佬们脚本,没改互助码
-# 海压竹枝低复举，风吹山角晦还明。
+ * 个人研究学习自用，主要是为了自己方便
+ * 合集加的最后结尾大佬们脚本,没改互助码，懂得可以自己对源码，结尾已经放了链接
+ * 看到AV脚本群里 Windstill大佬说青蛙大佬也加入了，说我恰饭，那个贡献者是原来青蛙库改的不是有意的
+ * 想用谁的合集都可以，结尾有其他大佬们的合集或者看Oreomeow大佬整理的那些
 ## 青龙拉取链接
 ``` 
-ql repo https://github.com/gys619/jdd.git "jd_|jx_|jddj_|gua_|jddj_|getJDCookie|wskey" "activity|backUp|scf_test_event" "^jd[^_]|USER|utils|ZooFaker_Necklace|JDJRValidator_Pure|sign_graphics_validate|jddj_cookie|function|sign"
+ql repo https://github.com/gys619/jdd.git "jd_|jx_|jddj_|gua_|jddj_|getJDCookie|wskey" "activity|backUp" "^jd[^_]|USER|utils|ZooFaker_Necklace|JDJRValidator_Pure|sign_graphics_validate|jddj_cookie|function|ql"
 ```
 ```
 推荐定时 0 */4 * * *
 ```
 
+[兜兜风评价助手1.6测试版](https://github.com/gys619/gys/blob/main/doudoufeng/%E5%85%9C%E5%85%9C%E9%A3%8E%E7%9A%84%E4%B8%9C%E4%BA%AC%E8%AF%84%E4%BB%B7%E5%8A%A9%E6%89%8B(%E6%B5%8B%E8%AF%95%E7%89%88)%201.7.exe?raw=true)
+
+[退会：JDMemberCloseAccount](https://github.com/yqchilde/JDMemberCloseAccount)
 ### 更新日志
 <details>
 <summary>查看</summary>
 
-* 取消he1pu大佬的强制更新脚本，会自己加他的脚本！
-* 注意修改[airacg](https://github.com/airacg/jd_task.git)大佬的任务定时
-* 加了[Oreomeow大佬](https://raw.githubusercontent.com/Oreomeow/VIP/main/Conf/Qinglong/config.sample.sh)的config模板
-* 财富岛新手任务
+
+* 最新面板2.9.7拉不到可以进入容器
+    ```
+    docker exec -it 容器名 bash
+    cd repo
+    rm -rf gys619_jdd
+    ```
+* 觉得重复任务多的，可以用jd_disable.py禁用重复任务
+* 加了[Oreomeow大佬](https://raw.githubusercontent.com/Oreomeow/VIP/main/Conf/Qinglong/config.sample.sh)的config模板,名字是jd_config.sample.sh
+* 财富岛新手任务开木板
   * 修改青龙配置文件,如下,加个ts
   ```
    #ql repo命令拉取脚本时需要拉取的文件后缀，直接写文件后缀名即可
    RepoFileExtensions="js py ts"
    ```
-* 加了[Zy143L](https://github.com/Zy143L/wskey.git)大佬得wskey
-* 不加he1pu和yuannian的开卡脚本
-* ~~加了hwkxk得欢太商城脚本，自己在config.ini填写ck~~
-* [退会：JDMemberCloseAccount](https://github.com/yqchilde/JDMemberCloseAccount)
+
  
  
 </details>
@@ -34,9 +41,14 @@ ql repo https://github.com/gys619/jdd.git "jd_|jx_|jddj_|gua_|jddj_|getJDCookie|
 ### 安装青龙需要一些的依赖
 <details>
 <summary>查看依赖列表</summary>
- 安装青龙的一些依赖，按需求安装
 
-* docker exec -it qinglong bash -c "npm install -g typescript"
+* 遇到Cannot find module 'xxxxxx'报错就进入青龙容器
+* docker exec -it QL(自己容器名) bash
+* pnpm install xxxxx(报错中引号里的复制过来)
+ 
+
+ 安装青龙的一些依赖，按需求安装
+* docker exec -it qinglong(自己容器名) bash -c "npm install -g typescript"
 
 * docker exec -it qinglong bash -c "npm install axios date-fns"
 
@@ -265,4 +277,4 @@ ql repo https://github.com/panghu999/panghu.git "jd_"
 *  [@X1a0He](https://github.com/X1a0He/jd_scripts_fixed)
 *  [@AlterGu](https://github.com/AlterGu/qinglong_note)
 *  [@Mashiro2000](https://github.com/Mashiro2000/HeyTap)
-
+*  [@Aaron-lv](https://github.com/Aaron-lv/sync)
