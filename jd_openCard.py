@@ -1,7 +1,13 @@
 #!/bin/env python3
 # -*- coding: utf-8 -*
 '''
-cron=2 8,15 * * *  python3 jd_OpenCard.py
+项目名称: JD_OpenCard
+Author: Curtin
+功能：JD入会开卡领取京豆
+CreateDate: 2021/5/4 下午1:47
+UpdateTime: 2021/6/19
+建议cron: 
+cron "2 8,15 * * *" jd_OpenCard.py, tag=开卡有礼, enabled=true
 new Env('开卡有礼');
 '''
 version = 'v1.2.2'
@@ -885,7 +891,7 @@ def isMemory(memorylabel, startNum1, startNum2, midNum, endNum, pinNameList):
                             f"\n上次已完成所有shopid。\n\n请输入 0 或 1\n0 : 退出。\n1 : 重新跑一次，以防有漏\n")
                         if "JD_COOKIE" in os.environ:
                             print("当前Env环境，即将退出")
-                             exit(0)
+                            exit(0)
                         try:
                             getyourNum = int(input("正在等待您的选择："))
                             if getyourNum == 1:
