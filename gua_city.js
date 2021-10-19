@@ -3,7 +3,7 @@
 =================================Quantumultx=========================
 [task_local]
 #城城领现金
-0 0-23/5,22 10 * * gua_city.js, tag=城城领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 0-23/5,22 * 10 * gua_city.js, tag=城城领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
  */
 const $ = new Env('城城领现金');
@@ -195,6 +195,7 @@ function getInfo(inviteId, flag = false) {
             data = JSON.parse(data);
             if (data.code === 0) {
               if (data.data && data['data']['bizCode'] === 0) {
+                console.log(`待提现:￥${data.data.result.userActBaseInfo.poolMoney}`)
                 for(let vo of data.data.result && data.data.result.popWindows || []){
                   if (vo && vo.type === "dailycash_second") {
                     await receiveCash()
@@ -345,7 +346,7 @@ function shareCodesFormat() {
     if ($.shareCodesArr[$.index - 1]) {
       $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     }
-    if($.index == 1) $.newShareCodes = [...$.newShareCodes,...inviteCodes]
+    if($.index == 1) $.newShareCodes = [...inviteCodes,...$.newShareCodes]
     try{
       const readShareCodeRes = await readShareCode();
       if (readShareCodeRes && readShareCodeRes.code === 200) {
