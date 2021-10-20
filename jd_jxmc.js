@@ -121,12 +121,12 @@ if ($.isNode()) {
     }
   }
 })()
-    .catch((e) => {
-      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-    })
-    .finally(() => {
-      $.done();
-    })
+  .catch((e) => {
+    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+  })
+  .finally(() => {
+    $.done();
+  })
 
 async function pasture() {
   try {
@@ -161,11 +161,11 @@ async function pasture() {
       console.log(`互助码：${$.homeInfo.sharekey}`);
       $.helpCkList.push($.cookie);
       $.inviteCodeList.push(
-          {
-            'use':$.UserName,
-            'code':$.homeInfo.sharekey,
-            'max':false
-          }
+        {
+          'use':$.UserName,
+          'code':$.homeInfo.sharekey,
+          'max':false
+        }
       );
       await $.wait(2000)
       await takeGetRequest('GetCardInfo');
@@ -757,18 +757,18 @@ async function requestAlgo() {
 
 Date.prototype.Format = function (fmt) {
   var e,
-      n = this, d = fmt, l = {
-        "M+": n.getMonth() + 1,
-        "d+": n.getDate(),
-        "D+": n.getDate(),
-        "h+": n.getHours(),
-        "H+": n.getHours(),
-        "m+": n.getMinutes(),
-        "s+": n.getSeconds(),
-        "w+": n.getDay(),
-        "q+": Math.floor((n.getMonth() + 3) / 3),
-        "S+": n.getMilliseconds()
-      };
+    n = this, d = fmt, l = {
+      "M+": n.getMonth() + 1,
+      "d+": n.getDate(),
+      "D+": n.getDate(),
+      "h+": n.getHours(),
+      "H+": n.getHours(),
+      "m+": n.getMinutes(),
+      "s+": n.getSeconds(),
+      "w+": n.getDay(),
+      "q+": Math.floor((n.getMonth() + 3) / 3),
+      "S+": n.getMilliseconds()
+    };
   /(y+)/i.test(d) && (d = d.replace(RegExp.$1, "".concat(n.getFullYear()).substr(4 - RegExp.$1.length)));
   for (var k in l) {
     if (new RegExp("(".concat(k, ")")).test(d)) {
